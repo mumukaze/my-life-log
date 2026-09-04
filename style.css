@@ -1,0 +1,371 @@
+body {
+    margin: 0;
+    background-color: #f7f5f0;
+    color: #3f3b36;
+    font-family:
+        "Yu Gothic",
+        "Hiragino Kaku Gothic ProN",
+        sans-serif;
+}
+
+.app {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 0 100px;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+
+/* ==========================
+   入力画面
+   ========================== */
+
+.header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+}
+
+.header p {
+    margin: 0;
+    font-size: 13px;
+    color: #8b857d;
+    letter-spacing: 0.08em;
+}
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: #8b857d;
+    letter-spacing: 0.15em;
+}
+
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 12px;
+    border: none;
+    border-bottom: 1px solid #cfc9c0;
+    background-color: transparent;
+    color: #3f3b36;
+    font-size: 15px;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    box-sizing: border-box;
+    padding: 14px;
+    border: 1px solid #d8d2c9;
+    border-radius: 6px;
+    background-color: #fffdf9;
+    color: #3f3b36;
+    font-size: 15px;
+    line-height: 1.8;
+    resize: none;
+    outline: none;
+}
+
+textarea:focus,
+select:focus {
+    border-color: #9d968d;
+}
+
+#save-button {
+    display: block;
+    width: 180px;
+    margin: 10px auto 0;
+    padding: 13px;
+    border: 1px solid #6f6961;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #4b463f;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+}
+
+#save-button:hover {
+    background-color: #ebe7df;
+}
+
+
+/* ==========================
+   記録一覧
+   ========================== */
+
+.page-header {
+    margin-bottom: 35px;
+}
+
+.page-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.record {
+    padding: 20px 0;
+    border-top: 1px solid #d8d2c9;
+}
+
+.record-date {
+    font-size: 11px;
+    color: #9a948c;
+    letter-spacing: 0.08em;
+}
+
+.record-category {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 3px 9px;
+    border: 1px solid #d8d2c9;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #777168;
+}
+
+.record-content {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+
+/* ==========================
+   カテゴリ管理
+   ========================== */
+
+.category-add {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+#new-category {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #d8d2c9;
+    border-radius: 6px;
+    background-color: #fffdf9;
+    color: #3f3b36;
+    font-size: 14px;
+    outline: none;
+}
+
+#new-category:focus {
+    border-color: #9d968d;
+}
+
+#add-category-button {
+    padding: 0 18px;
+    border: 1px solid #6f6961;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #4b463f;
+    cursor: pointer;
+}
+
+#add-category-button:hover {
+    background-color: #ebe7df;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-top: 1px solid #d8d2c9;
+}
+
+.category-name {
+    font-size: 14px;
+}
+
+.category-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.category-actions button {
+    padding: 5px 9px;
+    border: 1px solid #d8d2c9;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #777168;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.category-actions button:hover {
+    background-color: #ebe7df;
+}
+
+.category-actions button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.category-order {
+    display: flex;
+    gap: 4px;
+}
+
+.category-order button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid #d8d2c9;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #777168;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.category-order button:hover {
+    background-color: #ebe7df;
+}
+
+.category-order button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+
+/* ==========================
+   AI分析用データ出力
+   ========================== */
+
+.export-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #d8d2c9;
+}
+
+.export-section h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+.export-description {
+    margin: 0 0 20px;
+    color: #8b857d;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.export-date {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.export-date-group {
+    flex: 1;
+}
+
+.export-date-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 11px;
+    color: #8b857d;
+    letter-spacing: 0.08em;
+}
+
+.export-date-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 8px;
+    border: 1px solid #d8d2c9;
+    border-radius: 6px;
+    background-color: #fffdf9;
+    color: #3f3b36;
+    font-size: 13px;
+    outline: none;
+}
+
+.export-date-group input:focus {
+    border-color: #9d968d;
+}
+
+#export-markdown-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #6f6961;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #4b463f;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+}
+
+#export-markdown-button:hover {
+    background-color: #ebe7df;
+}
+
+
+/* ==========================
+   下部ナビゲーション
+   ========================== */
+
+.bottom-nav {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    padding: 10px 0;
+    border-top: 1px solid #ddd7ce;
+    background-color: rgba(247, 245, 240, 0.95);
+}
+
+.nav-button {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #777168;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.nav-button span {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+.nav-button.active {
+    color: #3f3b36;
+}

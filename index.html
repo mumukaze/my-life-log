@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>気づき帳</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- ==========================
+             入力画面
+             ========================== -->
+
+        <section id="input-screen" class="screen">
+
+            <header class="header">
+                <h1>気づき帳</h1>
+                <p id="today"></p>
+            </header>
+
+
+            <div class="input-section">
+
+                <!-- カテゴリ -->
+                <div class="form-group">
+
+                    <label for="category">CATEGORY</label>
+
+                    <select id="category">
+                    </select>
+
+                </div>
+
+
+                <!-- メモ -->
+                <div class="form-group">
+
+                    <label for="content">MEMO</label>
+
+                    <textarea
+                        id="content"
+                        placeholder="ふと思ったことを書いてみる"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- 記録ボタン -->
+                <button id="save-button">
+                    記録する
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================
+             記録一覧画面
+             ========================== -->
+
+        <section id="records-screen" class="screen">
+
+            <header class="page-header">
+                <h2>記録を見る</h2>
+            </header>
+
+            <div id="records-list">
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             カテゴリ管理画面
+             ========================== -->
+
+        <section id="categories-screen" class="screen">
+
+            <header class="page-header">
+                <h2>カテゴリ管理</h2>
+            </header>
+
+
+            <!-- カテゴリ追加 -->
+            <div class="category-add">
+
+                <input
+                    type="text"
+                    id="new-category"
+                    placeholder="新しいカテゴリ"
+                >
+
+                <button id="add-category-button">
+                    追加
+                </button>
+
+            </div>
+
+
+            <!-- カテゴリ一覧 -->
+            <div id="categories-list">
+            </div>
+
+
+            <!-- ==========================
+                 AI分析用データ出力
+                 ========================== -->
+
+            <div class="export-section">
+
+                <h3>AI分析用データ</h3>
+
+                <p class="export-description">
+                    指定した期間の記録をMarkdownファイルとして出力します。
+                </p>
+
+
+                <div class="export-date">
+
+                    <div class="export-date-group">
+
+                        <label for="export-start-date">
+                            開始日
+                        </label>
+
+                        <input
+                            type="date"
+                            id="export-start-date"
+                        >
+
+                    </div>
+
+
+                    <div class="export-date-group">
+
+                        <label for="export-end-date">
+                            終了日
+                        </label>
+
+                        <input
+                            type="date"
+                            id="export-end-date"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button id="export-markdown-button">
+                    Markdownで出力
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================
+         下部ナビゲーション
+         ========================== -->
+
+    <nav class="bottom-nav">
+
+        <button
+            class="nav-button"
+            data-screen="input-screen"
+        >
+            ＋
+            <span>記録</span>
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-screen="records-screen"
+        >
+            ☰
+            <span>一覧</span>
+        </button>
+
+        <button
+            class="nav-button"
+            data-screen="categories-screen"
+        >
+            ⚙
+            <span>管理</span>
+        </button>
+
+    </nav>
+
+
+
+    <script src="script.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./sw.js");
+        }
+    </script>
+
+</body>
+
+</html>
